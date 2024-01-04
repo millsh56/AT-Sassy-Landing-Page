@@ -1,3 +1,6 @@
+@import "__utilities.scss";
+@import "__config.scss";
+@import "__btnConfig.scss";
 
 * {
   box-sizing: border-box;
@@ -6,29 +9,85 @@
 }
 
 body {
-  background-color: $light-color;
+  background-color: $primary-color;
   font-family: $font-stack;
   line-height: 1;
 }
 
-img {
-  border-radius: 50%;
+
+.banner {
+  background-color: $navBackgroundColor;
+  padding: 10px;
+  color: $navTextColor;
 }
 
-a {
-  text-decoration: none;
+nav{
+  padding: 20px;
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: $navLinkColor;
+    
+    li {
+      margin-right: 20px;
+      color: $navLinkColor;
+      
+      a {
+        text-decoration: none;
+        font-style: none;
+        color: $navLinkColor;
+        
+        &:hover {
+          color: $navLinkHoverColor;
+        }
+      }
+    }
+  }
 }
 
 .hero {
-  // This is where the bulk of the SCSS styling needs to be done
+  padding: 20px;
+  justify-content: center;
+  text-align: left;
+  @media screen and (max-width: 768px) {
+    /* Adjust font size for smaller screens */
+    font-size: 20px;
+  }
 
-  // Take a look at the other files we've built already. How can they be useful here?
+  @media screen and (max-width: 480px) {
+    /* Further adjust font size for even smaller screens */
+    font-size: 18px;
+  }
+
+  .hero-content {
+    padding: 10px;
+    font-size: $heroFontSize;
+    color: $heroFontColor;
+  }
 
   // Also, take time to review the features of SCSS we've already covered:
   // 1. $variables
   // 2. nesting (dont forget about the ampersand (&) parent selector!)
   // 3. At-Rules
 }
+
+img {
+  padding: 15px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 45%;
+  height: auto;
+  border-radius: 50%;
+  
+}
+
+
+
+
 
 // This code is related to some of the aspects of SCSS we have yet to cover.
 // While you don't have to mess with it, it would be advisable to attempt to understand its functionality.
